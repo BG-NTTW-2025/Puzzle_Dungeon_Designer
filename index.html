@@ -117,8 +117,8 @@
     <button class="tab-button" onclick="clickNieuwePuzzelMenu()" id="nav-create" style="display:none;"><img src="puzzle_piece_symb.png" class="tab-icon" alt=""> New Entry</button>
     <button class="tab-button" onclick="openTab('tab-stats')" id="nav-stats" style="display:none;"><img src="my_creation_symb.png" class="tab-icon" alt=""> My Creations</button>
     
-    <a href="https://bg-nttw-2025.github.io/Dungeon_Map/" target="_blank" class="tab-button" id="nav-map" style="display:none;"><img src="maze_map_symb.png" class="tab-icon" alt=""> Dungeon Map</a>
-    <a href="https://bg-nttw-2025.github.io/Dungeon/" target="_blank" class="tab-button" id="nav-game"><img src="pion_symb.png" class="tab-icon" alt=""> The Game</a>
+    <a href="https://bg-nttw-2025.github.io/Puzzle_Dungeon_Map/" target="_blank" class="tab-button" id="nav-map" style="display:none;"><img src="maze_map_symb.png" class="tab-icon" alt=""> Dungeon Map</a>
+    <a href="https://bg-nttw-2025.github.io/Puzzle_Dungeon_Game/" target="_blank" class="tab-button" id="nav-game"><img src="pion_symb.png" class="tab-icon" alt=""> The Game</a>
     <a href="guidelines.pdf" target="_blank" class="tab-button" id="nav-disclaim"><img src="document_symb.png" class="tab-icon" alt=""> Guidelines & Disclaimer</a>
 </div>
 
@@ -582,7 +582,7 @@
         msgBox.textContent = "Herstel-e-mail versturen...";
 
         const { data, error } = await supabaseClient.auth.resetPasswordForEmail(emailInput, {
-            redirectTo: 'https://bg-nttw-2025.github.io/Dungeon_Submit_Puzzle/'
+            redirectTo: 'https://bg-nttw-2025.github.io/Puzzle_Dungeon_Designer/'
         });
 
         if (error) {
@@ -1174,7 +1174,7 @@ const currentUsername = designerData ? designerData.username : 'Unknown';
             email: email, 
             password: password,
             options: {
-                emailRedirectTo: 'https://bg-nttw-2025.github.io/Dungeon_Submit_Puzzle/'
+                emailRedirectTo: 'https://bg-nttw-2025.github.io/Puzzle_Dungeon_Designer/'
             }
         });
         
@@ -1237,7 +1237,7 @@ const currentUsername = designerData ? designerData.username : 'Unknown';
         await supabaseClient.auth.signInWithOAuth({ 
             provider: 'google',
             options: {
-                redirectTo: 'https://bg-nttw-2025.github.io/Dungeon_Submit_Puzzle/'
+                redirectTo: 'https://bg-nttw-2025.github.io/Puzzle_Dungeon_Designer/'
             }
         });
     });
