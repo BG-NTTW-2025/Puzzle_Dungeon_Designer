@@ -998,7 +998,7 @@ async function deletePuzzleByName(puzzleName) {
             let foundSpot = false;
 
             for (let attempt = 0; attempt < 400; attempt++) {
-                let pool = (attempt < 500 && topRoomIds.length > 0) ? topRoomIds : roomIds;
+                let pool = (attempt < 300 && topRoomIds.length > 0) ? topRoomIds : roomIds;
                 let candidateRoomId = pool[Math.floor(Math.random() * pool.length)];
                 let roomRecord = existingPuzzles.find(p => p.room_id === candidateRoomId);
                 if (!roomRecord || roomRecord.pos_x === null || roomRecord.pos_y === null) continue;
