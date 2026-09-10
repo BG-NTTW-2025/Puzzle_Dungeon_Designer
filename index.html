@@ -250,7 +250,7 @@
             <div class="form-group">
                 <label>Question / Puzzle</label>
                 <textarea rows="4" maxlength="300" placeholder="Type the riddle here..." id="draft-question"></textarea>
-                <div id="qCount" class="char-count">0 / 300</div>
+                <div id="qCount" class="char-count">0 / 500</div>
             </div>
 
             <!-- Category Section with Placeholder -->
@@ -394,7 +394,7 @@
     const qCount = document.getElementById('qCount');
     const sCount = document.getElementById('sCount');
 
-    qInput.addEventListener('input', () => { qCount.textContent = qInput.value.length + ' / 300'; });
+    qInput.addEventListener('input', () => { qCount.textContent = qInput.value.length + ' / 500'; });
     sInput.addEventListener('input', () => { sCount.textContent = sInput.value.length + ' / 100'; });
 
     function trackUmami(eventName) {
@@ -717,7 +717,7 @@
         document.getElementById('puzzle-credits-cost').value = Math.min(99, puzzle.credits_cost || 5);
         togglePaidCreditsInput();
 
-        qCount.textContent = (puzzle.question || '').length + ' / 300';
+        qCount.textContent = (puzzle.question || '').length + ' / 500';
         sCount.textContent = (puzzle.answer || '').length + ' / 100';
 
         document.getElementById('form-title').textContent = "Edit Puzzle";
@@ -735,7 +735,7 @@
         document.getElementById('btn-cancel-edit').style.display = 'none';
         document.getElementById('publish-message').textContent = '';
         togglePaidCreditsInput();
-        qCount.textContent = "0 / 300";
+        qCount.textContent = "0 / 500";
         sCount.textContent = "0 / 100";
         openTab('tab-stats');
     }
@@ -1128,7 +1128,7 @@ const currentUsername = designerData ? designerData.username : 'Unknown';
                 document.getElementById('category-select').value = "";
             }
             togglePaidCreditsInput();
-            qCount.textContent = "0 / 300";
+            qCount.textContent = "0 / 500";
             sCount.textContent = "0 / 100";
             loadDesignerPuzzles(currentUserId);
         }
